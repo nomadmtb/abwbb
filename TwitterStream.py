@@ -10,6 +10,9 @@ class TwitterStream(tweepy.StreamListener):
 
     def __init__(self):
 
+        # Start the tweet_count.
+	self.tweet_count = 0
+
         # Load the access keys.
         try:
             with open('access_keys.txt') as access_file:
@@ -43,13 +46,15 @@ class TwitterStream(tweepy.StreamListener):
     # What we do when the class gets a status from the stream.
     def on_status(self, status):
 
+        # Increment the counter.
+	self.tweet_count += 1
+
         # Play the sound.
         os.system("afplay sounds/Tune.m4a &")
 
-        print("New @reply:")
-
         # Print the details.
-        print("\t{0}:\t{1}\n".format(
+	print("[{0}]{1}:\t{2}".format(
+	    self.tweet_count,
             status.user.screen_name.encode("utf-8"),
             status.text.encode("utf-8"))
         )
