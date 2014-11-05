@@ -4,6 +4,7 @@
 import tweepy
 from AppPanic import panic
 from time import sleep
+import os
 import threading
 
 
@@ -50,8 +51,10 @@ class Twitter:
 
         while True:
 
+            # This list will hold the new @reply's with each iteration.
             new_statuses = []
-            print("Sleeping...")
+
+            # We only want to check every n seconds.
             sleep(30)
 
             # Try to get the new statuses with the current context.
@@ -65,6 +68,9 @@ class Twitter:
                 print("No new @reply's detected")
 
             else:
+                # Play sound from shell.
+                os.system("afplay sounds/Tune.m4a &")
+
                 # Iterate through the statuses and print them.
                 for status in new_statuses:
                     print("@{0}: {1}".format(status.author.screen_name, status.text))
