@@ -8,7 +8,7 @@ import os
 import threading
 
 
-class Twitter:
+class Twitter():
 
     # Init the latest @reply.
     def init_reply_context(self):

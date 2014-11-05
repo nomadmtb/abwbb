@@ -1,15 +1,14 @@
 #!/usr/bin/python
 
 from Twitter import Twitter
+from TwitterStream import TwitterStream
 
 
 # Main Routine...
 if __name__ == '__main__':
 
-    print("---ABW Beer Bot---")
+    print("\n   d[-_-]b  ")
+    print("---BeerBot---\n")
 
-    # Create our bot instance.
-    myBot = Twitter()
-
-    # Start the monitor.
-    myBot.start_monitor()
+    myBot = TwitterStream()
+    myBot.start_stream()
