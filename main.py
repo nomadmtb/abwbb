@@ -7,7 +7,9 @@ from TwitterStream import TwitterStream
 # Main Routine...
 if __name__ == '__main__':
 
-    print("\n   d[-_-]b  ")
+    print("\n   d[-_-]b")
+    print("\n    *-|-*")
+    print("\n      _")
     print("---BeerBot---\n")
 
     myBot = TwitterStream()
